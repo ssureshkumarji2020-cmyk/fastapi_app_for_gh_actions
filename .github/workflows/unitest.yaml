@@ -1,0 +1,25 @@
+name: Run Unittest
+
+On:
+  push:
+  pull_request:
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest # Runners.
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+      - name: Install Dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Run Tests
+        run: |
+          pytest

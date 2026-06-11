@@ -1,2 +1,20 @@
-run below for FastAPI..
+1. run below for FastAPI..
     uvicorn app.main:app --port 8001
+2. after running above, please open browser to enter http://localhost:8001 and it must show the details..
+3. Open another terminal and run pytest..
+4. the test must be passed.. status
+5. come back to uvicorn terminal and exit the running things..
+6. enter the following
+    git add .
+    git commit -m "feat: initial app"
+    git push
+7. Once push then the app scripts will be transfered to github..
+
+CI/CD : Continuous Integration and Continuos Development
+
+This will be important and main things for Devops
+whenever pushing the code for any commit happening then automatically run the test cases, linting (writing format, styling guide), the application can build automatically and push it to repository. This is the purpose we are using github actions.. and it is one kind of automation..
+
+If we plan to merge the code to main branch then initially needs to do some setup, like UAT, linting is okay and then build the image.. once builded successfully then we can push it to repository.
+
+We are having an application, whenever there is a push or pull request to any of the branches then UAt to be done.. if so then we have to write a workflow.. like steps by steps.. these things should be under .github folder.. and crate a workflow folder. under that we have to create a workflow in .yaml file. like .githup\workflows\unitest.yaml
